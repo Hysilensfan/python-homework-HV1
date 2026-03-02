@@ -1,1 +1,1 @@
-print(f"{int(input())-1911}")
+print(int(input())-1911)
