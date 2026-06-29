@@ -1,9 +1,12 @@
-for i in range(int(input())):
-    u = d = 0
-    a, z = input(), input().split(",")
-    for e in range(len(z)-1):
-        if int(z[e])> int(z[e+1]) :
-            d += int(z[e]) - int(z[e + 1])
-        elif int(z[e])< int(z[e+1]):
-            u += int(z[e+1]) -int(z[e])
-    print((u * 20)+(d * 10))
+for _ in range(int(input())):
+    s, p, tot = int(input()), input().split(","), 0  # Record the number of stops, the floors where the elevator stops, and the total cost. The cost is initialized to 0 by default
+    if len(p) == s:  # Check whether the test data fully conforms to the requirements (optional)
+        fst_p, p = int(p[0]), list(map(int,p[1:]))
+        for a in p:
+            a = int(a)
+            if fst_p > a:
+                tot += (fst_p - a) * 10
+            elif fst_p < a:
+                tot += (a - fst_p) * 20
+            fst_p = a
+        print(tot)
