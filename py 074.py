@@ -1,7 +1,7 @@
 from ast import literal_eval as le
 
 
-def nesting_doll_maximum(test):
+def nesting_doll_maximum(test: list[list[int]]) -> int:
     if len(test) == 1:
         return 1
     test.sort(key=lambda x: (x[0], -x[1]))
